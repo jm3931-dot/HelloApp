@@ -5,7 +5,15 @@ public class HelloApp {
             return;
         }
 
-        String names = String.join(", ", args);
-        System.out.println("Hello, " + names + "!");
+        for (String name : args) {
+            if (name == null) {
+                continue;
+            }
+            name = name.trim();
+            if (name.isEmpty()) {
+                continue;
+            }
+            System.out.println("Hello, " + name + "!");
+        }
     }
 }
