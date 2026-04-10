@@ -4,7 +4,7 @@ public class HelloApp {
             System.out.println("Hello, World!");
             return;
         }
-
+        String names = "";
         for (String name : args) {
             if (name == null) {
                 continue;
@@ -13,7 +13,13 @@ public class HelloApp {
             if (name.isEmpty()) {
                 continue;
             }
-            System.out.println("Hello, " + name + "!");
+            names += name + ", ";
         }
+        if (names.isEmpty()) {
+            System.out.println("Hello, World!");
+            return;
+        }
+        names = names.substring(0, names.length() - 2);
+        System.out.println("Hello, " + names + "!");
     }
 }
