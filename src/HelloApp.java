@@ -4,22 +4,14 @@ public class HelloApp {
             System.out.println("Hello, World!");
             return;
         }
-        String names = "";
-        for (String name : args) {
-            if (name == null) {
-                continue;
-            }
-            name = name.trim();
-            if (name.isEmpty()) {
-                continue;
-            }
-            names += name + ", ";
-        }
-        if (names.isEmpty()) {
+
+        String names = String.join(", ", args);
+
+        if (names.trim().isEmpty()) {
             System.out.println("Hello, World!");
             return;
         }
-        names = names.substring(0, names.length() - 2);
+
         System.out.println("Hello, " + names + "!");
     }
 }
